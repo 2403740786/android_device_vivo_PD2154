@@ -26,7 +26,7 @@ on:
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        default: 'omni_PD2154'
+        default: 'twrp_PD2154'
         
 env:
   ssh: true6
