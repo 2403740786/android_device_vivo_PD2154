@@ -9,11 +9,11 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
-
 # Inherit from PD2154 device
 $(call inherit-product, device/vivo/PD2154/device.mk)
+
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_DEVICE := PD2154
 PRODUCT_NAME := omni_PD2154
