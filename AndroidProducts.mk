@@ -9,6 +9,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_PD2154.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_PD2154-user \
-    twrp_PD2154-userdebug \
     twrp_PD2154-eng
