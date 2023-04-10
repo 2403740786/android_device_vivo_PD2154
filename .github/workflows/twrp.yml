@@ -29,7 +29,7 @@ on:
         default: 'omni_PD2154'
         
 env:
-  ssh: true
+  ssh: true6
   
 
 jobs:
