@@ -14,7 +14,7 @@ on:
       DEVICE_URL:
         description: 'DEVICE_URL'
         required: true
-        default: 'https://github.com/2403740786/android_device_vivo_PD2154'
+        default: 'https://github.com/zhlhlf/android_device_vivo_PD2154'
       DEVICE_BRANCH:
         description: 'DEVICE_BRANCH'
         required: true
@@ -47,14 +47,14 @@ jobs:
       run: |
         git clone https://github.com/akhilnarang/scripts
         sudo bash scripts/setup/android_build_env.sh
-        sudo bash scripts/setup/install_android_sdk.sh || echo 'by 2403740786'\n
+        sudo bash scripts/setup/install_android_sdk.sh || echo 'by zhlhlf'\n
         sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
         sudo chmod a+x /usr/local/bin/repo
               
     - name: 拉取源码
       run: |
-        git config --global user.name "2403740786"
-        git config --global user.email "2403740786@qq.com"
+        git config --global user.name "zhlhlf"
+        git config --global user.email "zhlhlf@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.LIBRARY_URL }} -b ${{ github.event.inputs.LIBRARY_BRANCH }}
         repo sync -j$(nproc --all) --force-sync
         rm -r .repo
@@ -89,12 +89,12 @@ jobs:
          export LC_ALL=C
          lunch ${{ github.event.inputs.DEVICE_NAME }}
          make recoveryimage -j$(nproc --all)
-    - name: 移动镜像至2403740786/
+    - name: 移动镜像至zhlhlf/
       run: |
-         mkdir 2403740786
-         cp -r ./out/target/product/*/recovery.img 2403740786/
-         ls 2403740786
+         mkdir zhlhlf
+         cp -r ./out/target/product/*/recovery.img zhlhlf/
+         ls zhlhlf
     - name: 上传至WeTransfer        
       run: |
            curl -sL https://git.io/file-transfer | sh
-           sudo ./transfer wet 2403740786/*
+           sudo ./transfer wet zhlhlf/*
